@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref, computed} from 'vue'
-import arrowLeft from '../assets/icons/arrow-left.svg'
-import arrowRight from '../assets/icons/arrow-right.svg'
+import ArrowLeft from '../assets/icons/arrowLeft.svg'
+import ArrowRight from '../assets/icons/arrowRight.svg'
 
 const projects = [
     {
@@ -45,92 +45,134 @@ function prevProject() {
         <h2 class="projects-title">
             Mine prosjekter
         </h2>
+        <p class="projects-intro">
+            Prosjekter jeg har bygget gjennom studiet og på fritiden
+        </p>
+
         <div class="project-carousel">
-             <button class="arrow-btn" @click="prevProject">
-            <img :src="arrowLeft" alt="Forrige prosjekt">
+            <button class="arrow-btn arrow-btn-left" @click="prevProject">
+                <ArrowLeft class="arrow-icon" />
             </button>
-            <div class="projects-grid">
+
             <a :href="currentProject.link" class="project-card">
                 <h3>
                     {{ currentProject.title }}
                 </h3>
             </a>
-        </div>
-        <button class="arrow-btn" @click="nextProject">
-            <img :src="arrowRight" alt="Neste prosjekt">
-        </button>
-        </div>
-       
 
+            <button class="arrow-btn arrow-btn-right" @click="nextProject">
+                <ArrowRight class="arrow-icon" />
+            </button>
+        </div>
     </section>
 </template>
 
 <style scoped>
-.arrow-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.arrow-btn img {
-    width: 48px;
-    height: 48px;
-    transition: transform 0.2s ease;
-}
-
-.arrow-btn:hover img {
-    transform: scale(1.1);
-}
-
-.project-carousel {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-}
-.projects {
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+.projects-section {
+    padding: 6rem 8vw 8rem;
+    background: var(--bg-soft);
 }
 
 .projects-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
+
+    margin-bottom: 1rem;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.projects-intro {
+    max-width: 620px;
+
+    margin: 0 auto 2.5rem;
+
+    text-align: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+
+    color: var(--espresso);
+
+    opacity: 0.8;
 }
 
-/* .projects-grid img{
-    height: 40rem;
-    width: auto;
-    object-fit: cover;
-    display: block;
-} */
+.project-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    max-width: 700px;
+    margin: 0 auto;
+}
 
 .project-card {
+    width: 420px;
+    min-height: 140px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     text-decoration: none;
-    color: inherit; /* Tvinger teksten til å få samme farge fra sitt direkte overordnede element */
-    overflow: hidden;
+    color: var(--espresso);
+
+    background: var(--bg-main);
+    border: 1px solid rgba(75, 38, 25, 0.18);
+    border-radius: 24px;
+
+    box-shadow: 0 18px 45px rgba(75, 38, 25, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.project-card img {
-    height: 40rem;
-    width: 100%; 
-    object-fit: cover;
-    border-radius: 8px;
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 55px rgba(75, 38, 25, 0.12);
 }
 
 .project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
     text-align: center;
-    padding: 15px;
 }
 
+.arrow-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.arrow-icon {
+    width: 36px;
+    height: 36px;
+
+    color: var(--espresso);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.arrow-btn:hover .arrow-icon {
+    color: var(--terracotta);
+}
+
+.arrow-btn-left:hover .arrow-icon {
+    transform: translateX(-2px);
+}
+
+.arrow-btn-right:hover .arrow-icon {
+    transform: translateX(2px);
+}
 </style>

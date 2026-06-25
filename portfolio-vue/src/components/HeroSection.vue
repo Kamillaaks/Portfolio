@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import ZebraPattern from '../assets/icons/zebra.svg'
 </script>
 
 <template>
@@ -11,8 +11,8 @@
                 </h1>
 
                 <p class="intro">
-                    Jeg lærer å bygge nettsider og digitale løsninger med fokus
-                    på struktur, estetikk og funksjon.
+                    Jeg liker å bygge apper hvor design og kode går hånd i hånd. Jeg liker å skape løsninger
+                    som både fungerer godt og føles gode å bruke.
                 </p>
 
                 <p>
@@ -21,14 +21,20 @@
                     og personlige.
                 </p>
 
-                <a href="#projects" class="cta-button">
+                <a href="#projects" class="button">
                     Se prosjekter
                 </a>
             </div>
         </div>
 
         <div class="hero-img">
-            <img src="../assets/images/Kamilla.jpg" alt="Kamilla">
+            <ZebraPattern class="zebra-pattern"/>
+            <img 
+                src="../assets/images/Kamilla.jpg" 
+                alt="Kamilla"
+                class="portrait"
+            >
+   
         </div>
     </section>
 </template>
@@ -37,7 +43,13 @@
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 4rem 2rem;
+    align-items: center;
+    gap: 4rem;
+
+    min-height: 90vh;
+    padding: 4rem 8vw;
+
+    background: var(--bg-soft);
 }
 
 .hero-text {
@@ -47,36 +59,55 @@
     padding: 3rem;
 }
 
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.8rem;
+}
+
 .hero-text h1 {
-    font-family: 'Cooper Black', serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .hero-text p {
     line-height: 1.6;
+    margin-bottom: 1.8rem;
 }
 
-.hero-text-inner {
+.hero-inner {
     max-width: 400px;
 }
 
 .hero-img {
-    width: 500px;
-    aspect-ratio: 1/1;
+    position: relative;
 
-    mask-image: url('../assets/icons/flower.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-
-    -webkit-mask-image: url('../assets/icons/flower.svg');
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.portrait {
+    position: relative;
+    z-index: 2;
+
+    width: 300px;
+    max-height: 100%;
+    border-radius: 72% 44% 31% 56% / 39% 37% 66% 27%;
+}
+
+.zebra-pattern {
+    position: absolute;
+
+    width: 500px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-55%, -50%);
+    border-radius: 78% 35% 20% 31% / 40% 29% 52% 49%;
+
+    z-index: 1;
+
+    color: var(--terracotta);
+    opacity: 0.5;
 }
 </style>

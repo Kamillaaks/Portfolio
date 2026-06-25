@@ -1,27 +1,36 @@
 <script setup lang="ts">
+import LogoSun from '../assets/icons/sol.svg'
+import GithubIcon from '../assets/icons/github.svg'
+import LinkedinIcon from '../assets/icons/linkedin.svg'
+import EmailIcon from '../assets/icons/email.svg'
 
 </script>
 
 <template>
     <header class="header">
-        <h1 class="header-logo">
-            <a href="#main" class="home">Kamilla</a>
-        </h1>
+        <a href="#main" class="header-logo">
+            <span>Kamilla</span>
+            <LogoSun class="logo-sun"/>
+            <span>Selnes</span>
+        </a>
+        
         <nav>
             <ul class="header-links">
                 <li>
                     <a href="https://github.com/Kamillaaks">
-                        <img src="../assets/icons/github.svg" alt="Kamilla">
+                        <GithubIcon class="icon" />
                     </a>
                 </li>
+
                 <li>
                     <a href="https://www.linkedin.com/in/kamilla-selnes-a55bb5117/">
-                        <img src="../assets/icons/linkedin.svg" alt="Kamilla">
+                        <LinkedinIcon class="icon" />
                     </a>
                 </li>
+
                 <li>
-                    <a href="mailto:someone@example.com">
-                        <img src="../assets/icons/email.svg" alt="Kamilla">
+                    <a href="mailto:...">
+                        <EmailIcon class="icon" />
                     </a>
                 </li>
             </ul>
@@ -31,38 +40,57 @@
 
 <style scoped>
 .header {
-    padding: 20px 20px;
+    padding: 0.35rem 8vw;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
     position: sticky;
     top: 0;
     z-index: 100;
 
-    background-color: var(--accent-mustard);
+    background: var(--bg-main);
 }
 
 .header-logo {
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    text-decoration: none;
+    color: var(--espresso);
+
+    font-family: "Playfair Dislpay", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22rem;
+}
+
+.logo-sun {
+    width: 26px;
+    height: 26px;
+
+    flex-shrink: 0;
+
+    color: var(--golden-hour);
 }
 
 .header-links {
     display: flex;
     flex-direction: row;
-    gap: 0.7rem;
+    gap: 1.2rem;
     list-style: none;
     margin: 0;
     padding: 0;
     align-items: center;
 }
 
-.header-links img {
-    height: 30px;
-    width: auto;
-    vertical-align: middle;
-    margin: 0 5px;
+.header-links a {
+    color: var(--espresso);
+}
+
+.header-links a:hover {
+    color: var(--terracotta);
 }
 
 .home {
@@ -71,9 +99,7 @@
 }
 
 .icon {
-    height: 50px;
-    width: auto;
-    margin: 0 10px;
-    vertical-align: middle;
+    width: 26px;
+    height: auto;
 }
 </style>
