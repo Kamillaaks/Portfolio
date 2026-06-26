@@ -32,8 +32,7 @@
 .about {
     position: relative;
     overflow: hidden;
-    padding: 8rem 8vw;
-
+    padding: 6rem 8vw;
 }
 
 .about h2 {

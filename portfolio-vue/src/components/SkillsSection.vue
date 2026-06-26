@@ -52,57 +52,109 @@ const selectedSkill = ref(skills[0])
 </script>
 
 <template>
-    <div class="skills-container">
-        <div class="skills-list">
-            <li class="skill-item"
-                v-for="skill in skills"
-                :key="skill.name"
-                @mouseenter="selectedSkill = skill"
-            >
-                {{ skill.name }}
-            </li>
-        </div>
-        
+    <section id="skills" class="skills-section">
+        <h2 class="skills-title">
+            Ferdigheter
+        </h2>
 
-        <div class="skill-description">
-            <h3>{{ selectedSkill.name }}</h3>
-            <p>{{ selectedSkill.description }}</p>
+        <p class="skills-intro">
+            Teknologier og verktøy jeg har jobbet med gjennom studiet og egne prosjekter.
+        </p>
+
+        <div class="skills-container">
+            <ul class="skills-list">
+                <li
+                    v-for="skill in skills"
+                    :key="skill.name"
+                    class="skill-item"
+                    @mouseenter="selectedSkill = skill"
+                >
+                    {{ skill.name }}
+                </li>
+            </ul>
+
+            <div class="skill-description">
+                <h3>
+                    {{ selectedSkill.name }}
+                </h3>
+
+                <p>
+                    {{ selectedSkill.description }}
+                </p>
+            </div>
         </div>
-    </div>
-   
+    </section>
 </template>
 
 <style scoped>
+.skills-section {
+    margin-top: 4rem;
+    padding: 6rem 8vw;
+    background: var(--bg-main);
+}
+
+.skills-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--espresso);
+}
+
 .skills-container {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 1.5rem;
 
-    max-width: 700px;
-    margin: 3rem auto;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skills-intro {
+    max-width: 620px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    line-height: 1.8;
+    color: var(--espresso);
+    opacity: .8;
+}
+
+.skills-list,
+.skill-description {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    border: 1px solid rgba(75, 38, 25, 0.14);
 }
 
 .skills-list {
-    width: 180px;
+    width: 300px;
+    padding: 2rem;
 
-    background-color: var(--bg-main);
+    list-style: none;
+    margin: 0;
+}
 
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
+.skill-item {
+    cursor: pointer;
+    font-size: 1.05rem;
+    line-height: 1.9;
 
-    padding: 1.5rem;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.skill-item:hover {
+    transform: translateX(6px);
+    color: var(--terracotta);
 }
 
 .skill-description {
-    width: 320px;
-    min-height: 250px;
+    width: 600px;
+    min-height: 330px;
 
-    background-color: var(--bg-main);
-
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-
-    padding: 2rem;
+    padding: 2.25rem;
 
     display: flex;
     flex-direction: column;
@@ -111,23 +163,19 @@ const selectedSkill = ref(skills[0])
     text-align: center;
 }
 
-.skill-item {
-    list-style: none;
-    cursor: pointer;
-
-    transition: all 0.2s ease;
-}
-
-.skill-item:hover {
-    transform: translateX(4px);
-    color: var(--accent-burgundy);
-}
-
 .skill-description h3 {
-    color: var(--accent-burgundy);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
 
-    margin-bottom: 1rem;
+    color: var(--text-light);
 
-    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-description p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    color: var(--text-light);
 }
 </style>

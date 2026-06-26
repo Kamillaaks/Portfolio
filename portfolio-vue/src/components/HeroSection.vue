@@ -107,7 +107,7 @@ import ZebraPattern from '../assets/icons/zebra.svg'
 
     z-index: 1;
 
-    color: var(--terracotta);
+    color: var(--bg-card-dark);
     opacity: 0.5;
 }
 </style>

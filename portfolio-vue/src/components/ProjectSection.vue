@@ -69,7 +69,7 @@ function prevProject() {
 
 <style scoped>
 .projects-section {
-    padding: 6rem 8vw 8rem;
+    padding: 6rem 8vw;
     background: var(--bg-soft);
 }
 
@@ -120,7 +120,7 @@ function prevProject() {
 
     background: var(--bg-main);
     border: 1px solid rgba(75, 38, 25, 0.18);
-    border-radius: 24px;
+    border-radius: 0px;
 
     box-shadow: 0 18px 45px rgba(75, 38, 25, 0.08);
 
