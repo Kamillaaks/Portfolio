@@ -13,6 +13,6 @@
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--bg-dark);
 }
 </style>
