@@ -69,7 +69,8 @@ function prevProject() {
 
 <style scoped>
 .projects-section {
-    padding: 6rem 8vw;
+    padding: 5rem 8vw 6rem;
+
     background: var(--bg-soft);
 }
 
@@ -78,19 +79,19 @@ function prevProject() {
     font-size: clamp(2.5rem, 5vw, 4rem);
     text-align: center;
 
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .projects-intro {
     max-width: 620px;
 
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 1.5rem;
 
     text-align: center;
 
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.7;
 
     color: var(--espresso);
 
@@ -140,6 +141,7 @@ function prevProject() {
 
     background: transparent;
     border: none;
+    border-radius: 0;
 
     cursor: pointer;
 }

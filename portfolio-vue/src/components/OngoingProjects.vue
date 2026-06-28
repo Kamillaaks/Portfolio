@@ -34,7 +34,7 @@
 
 <style scoped>
 .ongoing-projects {
-    padding: 6rem 8vw;
+    padding: 5rem  8vw 6rem;
     background: var(--bg-soft);
 }
 

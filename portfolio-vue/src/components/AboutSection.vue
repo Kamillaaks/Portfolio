@@ -32,14 +32,29 @@
 .about {
     position: relative;
     overflow: hidden;
-    padding: 6rem 8vw;
+
+    padding: 5rem 8vw 6rem;
+
+    background: var(--bg-main);
+}
+
+.container {
+    position: relative;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-text {
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 .about h2 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
 
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
 }
 
 .about h2::after {
@@ -50,38 +65,24 @@
     width: 60px;
     height: 2px;
 
-    margin-top: 1rem;
+    margin-top: 0.6rem;
 
     background: var(--terracotta);
 }
 
-.container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: var(--accent-sage);
-    padding: 20px;
-}
-
-.intro-text {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .intro-text p {
     font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
 
-    line-height: 1.9;
-
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .dialect {
     display: block;
-    margin-top: .75rem;
 
-    font-size: .9rem;
+    margin-top: 0.5rem;
+
+    font-size: 0.9rem;
     font-style: italic;
 
     color: var(--terracotta);

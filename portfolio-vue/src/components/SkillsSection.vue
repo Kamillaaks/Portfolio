@@ -88,8 +88,7 @@ const selectedSkill = ref(skills[0])
 
 <style scoped>
 .skills-section {
-    margin-top: 4rem;
-    padding: 6rem 8vw;
+    padding: 5rem 8vw 6rem;
     background: var(--bg-main);
 }
 
@@ -97,14 +96,15 @@ const selectedSkill = ref(skills[0])
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     text-align: center;
+    
     color: var(--espresso);
 
-    margin-bottom: 3rem;
+    margin-bottom: 0 0 3rem;
 }
 
 .skills-intro {
     max-width: 620px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.5rem;
 
     text-align: center;
     line-height: 1.8;

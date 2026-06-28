@@ -3,7 +3,6 @@ import LogoSun from '../assets/icons/sol.svg'
 import GithubIcon from '../assets/icons/github.svg'
 import LinkedinIcon from '../assets/icons/linkedin.svg'
 import EmailIcon from '../assets/icons/email.svg'
-
 </script>
 
 <template>
@@ -50,7 +49,10 @@ import EmailIcon from '../assets/icons/email.svg'
     top: 0;
     z-index: 100;
 
-    background: var(--bg-main);
+    background-color: var(--bg-main);
+    background-image: url("../assets/textures/groovepaper.png");
+    background-repeat: repeat;
+    background-size: auto;
 }
 
 .header-logo {
