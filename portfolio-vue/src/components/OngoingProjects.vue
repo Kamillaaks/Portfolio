@@ -26,65 +26,71 @@
                 <div class="ongoing-overlay">
                     <h3>{{ project.title }}</h3>
                     <p>{{ project.description }}</p>
-            </div>
+                </div>
             </a> 
         </div>
     </section>
 </template>
 
 <style scoped>
+.ongoing-projects {
+    padding: 6rem 8vw;
+    background: var(--bg-soft);
+}
+
+.ongoing-projects h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+
+    margin-bottom: 1rem;
+}
+
 .ongoing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 
     max-width: 1000px;
-    margin: 3rem auto;
-    padding: 0 2rem;
+    margin: 3rem auto 0;
 }
 
 .ongoing-card {
-    position: relative;
     display: block;
 
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
+    min-height: 260px;
+    padding: 2rem;
 
-    border-radius: 10px;
+    background: var(--bg-main);
+    border: 1px solid rgba(75, 38, 25, 0.18);
+
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--espresso);
 }
 
 .ongoing-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    transition: filter 0.25s ease, transform 0.25s ease;
+    display: none;
 }
 
 .ongoing-overlay {
-    position: absolute;
-    inset: 0;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 
-    padding: 1.5rem;
-    text-align: center;
-
-    opacity: 0;
-    transition: opacity 0.25s ease;
+    text-align: left;
 }
 
-.ongoing-card:hover img {
-    filter: brightness(1.15) opacity(0.35);
-    transform: scale(1.03);
+.ongoing-overlay h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+
+    margin-bottom: 1rem;
 }
 
-.ongoing-card:hover .ongoing-overlay {
-    opacity: 1;
+.ongoing-overlay p {
+    margin: 0;
+    line-height: 1.8;
 }
 </style>
