@@ -97,8 +97,20 @@ const selectedSkill = ref(skills[0])
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     text-align: center;
-    margin-bottom: 3rem;
     color: var(--espresso);
+
+    margin-bottom: 3rem;
+}
+
+.skills-intro {
+    max-width: 620px;
+    margin: 0 auto 2rem;
+
+    text-align: center;
+    line-height: 1.8;
+
+    color: var(--espresso);
+    opacity: .8;
 }
 
 .skills-container {
@@ -111,20 +123,26 @@ const selectedSkill = ref(skills[0])
     margin: 0 auto;
 }
 
-.skills-intro {
-    max-width: 620px;
-    margin: 0 auto 2rem;
-    text-align: center;
-    line-height: 1.8;
-    color: var(--espresso);
-    opacity: .8;
-}
-
 .skills-list,
 .skill-description {
+    position: relative;
+
     background: var(--bg-dark);
     color: var(--text-light);
+
     border: 1px solid rgba(75, 38, 25, 0.14);
+}
+
+.skills-list::after,
+.skill-description::after {
+    content: "";
+
+    position: absolute;
+    inset: 16px;
+
+    border: 1px solid rgba(255, 248, 239, 0.3);
+
+    pointer-events: none;
 }
 
 .skills-list {
@@ -137,6 +155,7 @@ const selectedSkill = ref(skills[0])
 
 .skill-item {
     cursor: pointer;
+
     font-size: 1.05rem;
     line-height: 1.9;
 

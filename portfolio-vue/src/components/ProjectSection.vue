@@ -120,18 +120,9 @@ function prevProject() {
 
     background: var(--bg-main);
     border: 1px solid rgba(75, 38, 25, 0.18);
-    border-radius: 0px;
+    border-radius: 0;
 
     box-shadow: 0 18px 45px rgba(75, 38, 25, 0.08);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 55px rgba(75, 38, 25, 0.12);
 }
 
 .project-card h3 {
@@ -158,21 +149,5 @@ function prevProject() {
     height: 36px;
 
     color: var(--espresso);
-
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.arrow-btn:hover .arrow-icon {
-    color: var(--terracotta);
-}
-
-.arrow-btn-left:hover .arrow-icon {
-    transform: translateX(-2px);
-}
-
-.arrow-btn-right:hover .arrow-icon {
-    transform: translateX(2px);
 }
 </style>
